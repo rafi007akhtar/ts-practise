@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>POC 2</title>
+        <link rel="stylesheet" href="styles.css" type="text/css" />
     </head>
     <body>
         <form>
+            <h1>Add New User</h1>
             Employee firstname: <input type="text" id="firstname" /> <br>
             Employee lastname: <input type="text" id="lastname" /> <br>
             Employee id: <input type="text" id="empid" /> <br>
@@ -15,6 +17,18 @@
             Employee email: <input type="text" id="email" /> <br>
             <input type="button" value="Submit" id="submit" />
         </form>
+        
+        
+        
+        <form>
+            <h1>Search For Details</h1>
+            Enter employee id: <input type="text" id="searchid" /> <br>
+            <input type="button" value="Submit" id="searchEmp" />
+        </form>
+        
+        <div id="details">
+            
+        </div>
         
         <script type="text/javascript" src="ts.js"></script>
     </body>

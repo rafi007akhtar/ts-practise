@@ -10,6 +10,7 @@ var myEmp = {
     address: "Hinjewadi, Pune",
     email: "alimdrafi@gmail.com"
 };
+// CODE FOR ADD USER FORM
 function validate(emp) {
     if (!/^[a-zA-Z]+$/.test(emp.firstname) || !/^[a-zA-Z]+$/.test(emp.lastname)) {
         alert("Invalid Name");
@@ -47,4 +48,29 @@ form.addEventListener("click", function () {
     EmpArr(newEmp);
     alert("New Record added");
     console.log(employees);
+});
+// CODE FOR SEARCH NEW USER FORM
+var search = document.querySelector("#searchEmp");
+search.addEventListener("click", function () {
+    var emp = null;
+    var empid = document.querySelector("#searchid").value;
+    for (var _i = 0, employees_1 = employees; _i < employees_1.length; _i++) {
+        var obj = employees_1[_i];
+        if (obj.empid == empid) {
+            emp = obj;
+            break;
+        }
+    }
+    var details = document.querySelector("#details");
+    if (emp == null) {
+        details.innerHTML = "No value found";
+    }
+    else {
+        console.log("emp: " + emp);
+        for (var _a = 0, _b = Object.keys(emp); _a < _b.length; _a++) {
+            var key = _b[_a];
+            console.log(key);
+            details.innerHTML = details.innerHTML + " " + key + ": " + emp[key] + " <br>";
+        }
+    }
 });

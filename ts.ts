@@ -13,7 +13,7 @@ function EmpArr(emp: Employee) {
     employees.push(emp);
 }
 
-let myEmp = {
+let myEmp: any = {
     firstname: "Rafi",
     lastname: "Akhtar",
     empid: 1699584,
@@ -22,7 +22,8 @@ let myEmp = {
     email: "alimdrafi@gmail.com"
 }
 
-function validate(emp) {
+// CODE FOR ADD USER FORM
+function validate(emp: any) {
     if (!/^[a-zA-Z]+$/.test(emp.firstname) || !/^[a-zA-Z]+$/.test(emp.lastname)) {
         alert("Invalid Name");
         return false;
@@ -68,4 +69,31 @@ form.addEventListener("click", function() {
     EmpArr(newEmp);
     alert("New Record added");
     console.log(employees);
+});
+
+
+// CODE FOR SEARCH NEW USER FORM
+
+let search: any = document.querySelector("#searchEmp");
+search.addEventListener("click", function() {
+    let emp = null;
+    let empid: any = (<HTMLInputElement> document.querySelector("#searchid")).value;
+    for (let obj of employees) {
+        if (obj.empid == empid) {
+            emp = obj;
+            break;
+        }
+    }
+    
+    let details: HTMLElement = document.querySelector("#details");
+    if (emp == null) {
+        details.innerHTML = "No value found";
+    }
+    else {
+        console.log("emp: " + emp);
+        for (let key of Object.keys(emp)) {
+            console.log(key);
+            details.innerHTML = `${details.innerHTML} ${key}: ${emp[key]} <br>`;
+        }
+    }
 });
