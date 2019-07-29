@@ -26,10 +26,18 @@ EmpArr(myEmp);
 
 console.log(employees);
 
-let form: any = document.querySelector("form");
-form.addEventListener("submit", function() {
-   alert("submitted");
+let form: any = document.querySelector("#submit");
+form.addEventListener("click", function() {
+    let firstname: any = (<HTMLInputElement>document.querySelector("#firstname")).value;
+    let lastname: any = (<HTMLInputElement>document.querySelector("#lastname")).value;
+    let empid: any = (<HTMLInputElement>document.querySelector("#empid")).value;
+    let phone: any = (<HTMLInputElement>document.querySelector("#phone")).value;
+    let address: any = (<HTMLInputElement>document.querySelector("#address")).value;
+    let email: any = (<HTMLInputElement>document.querySelector("#email")).value;
+    
+    let newEmp = {firstname, lastname, empid, phone, address, email};
+    EmpArr(newEmp);
+    
+    alert("New Record added");
+    console.log(employees);
 });
-
-let firstname: any = (<HTMLInputElement>document.querySelector("#firstname")).value;
-console.log(firstname);
