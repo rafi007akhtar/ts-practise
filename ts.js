@@ -67,9 +67,9 @@ search.addEventListener("click", function () {
     }
     else {
         console.log("emp: " + emp);
+        details.innerHTML = "";
         for (var _a = 0, _b = Object.keys(emp); _a < _b.length; _a++) {
             var key = _b[_a];
-            console.log(key);
             details.innerHTML = details.innerHTML + " " + key + ": " + emp[key] + " <br>";
         }
     }

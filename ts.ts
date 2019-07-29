@@ -91,8 +91,8 @@ search.addEventListener("click", function() {
     }
     else {
         console.log("emp: " + emp);
+        details.innerHTML = "";
         for (let key of Object.keys(emp)) {
-            console.log(key);
             details.innerHTML = `${details.innerHTML} ${key}: ${emp[key]} <br>`;
         }
     }
